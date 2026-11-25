@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="강아지와 고양이를 위한 균형 잡힌 영양, 안전한 급여, 건강한 식생활 정보를 제공하는 반려동물 영양연구소입니다.">
+  <meta name="theme-color" content="#245b43">
+  <title>반려동물 영양연구소 | 건강한 한 끼, 행복한 평생</title>
+  <style>
+    :root{--green:#245b43;--green2:#347a58;--mint:#eaf4ed;--cream:#fbfaf5;--ink:#26352d;--muted:#68766e;--line:#e4eae4;--gold:#e7b85b}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.7}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#ffffffed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:850;color:var(--green);font-size:1.12rem;text-decoration:none;white-space:nowrap}
+    .brand span{margin-right:7px}
+    nav{display:flex;gap:22px;flex-wrap:wrap}
+    nav a{text-decoration:none;color:#4c5d52;font-size:.92rem;font-weight:650}
+    nav a:hover{color:var(--green2)}
+    .hero{padding:78px 0 70px;background:radial-gradient(circle at 85% 25%,#d9eadc 0,transparent 27%),linear-gradient(135deg,#edf5ec,#fbf7e9)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:38px}
+    .eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;background:#fff;color:var(--green2);font-size:.82rem;font-weight:800;letter-spacing:.02em}
+    h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.18;letter-spacing:-.055em;margin:18px 0}
+    h1 em{font-style:normal;color:var(--green2)}
+    .lead{font-size:1.12rem;color:#56675c;max-width:610px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--green)}
+    .btn.primary{background:var(--green);color:#fff}
+    .btn.secondary{color:var(--green);background:#ffffffa8}
+    .hero-art{min-height:310px;border-radius:32px;background:linear-gradient(145deg,#fff,#e1efe3);display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #d9e7dc;box-shadow:0 24px 60px #315a3a18}
+    .pet-icons{font-size:clamp(5rem,11vw,8rem);letter-spacing:-.15em;filter:drop-shadow(0 12px 12px #264a3020)}
+    .float-note{position:absolute;background:#fff;padding:12px 16px;border-radius:16px;box-shadow:0 8px 24px #264a3018;font-weight:750;color:var(--green);font-size:.9rem}
+    .note1{left:18px;top:24px}.note2{right:18px;bottom:24px}
+    section{padding:72px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 34px}
+    .kicker{color:var(--green2);font-size:.82rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.25;letter-spacing:-.04em;margin:9px 0 12px}
+    .section-head p{color:var(--muted);margin:0}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 24px #223d2b08}
+    .card .icon{font-size:2rem}
+    .card h3{margin:12px 0 7px;color:var(--green);font-size:1.12rem}
+    .card p{margin:0;color:var(--muted);font-size:.95rem}
+    .soft{background:var(--mint)}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .guide{background:#fff;border-radius:22px;padding:28px;border:1px solid #dce9de}
+    .guide h3{font-size:1.35rem;margin:0 0 8px;color:var(--green)}
+    .guide ul{padding-left:20px;margin-bottom:0;color:#536359}
+    .guide li{margin:7px 0}
+    .warning{background:#fff8eb;border:1px solid #f0dfb9;border-radius:20px;padding:26px}
+    .warning h3{color:#865b17;margin-top:0}
+    .warning p{color:#6d5a3a;margin-bottom:0}
+    .food-list{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
+    .tag{background:#fff;border:1px solid #eadbb9;border-radius:999px;padding:7px 12px;font-weight:750;color:#76571f;font-size:.9rem}
+    .steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .step{background:#fff;border-radius:18px;padding:22px;border:1px solid var(--line)}
+    .step:before{counter-increment:step;content:"0" counter(step);font-weight:900;color:var(--gold);font-size:1.3rem}
+    .step h3{margin:7px 0;color:var(--green)}
+    .step p{margin:0;color:var(--muted);font-size:.94rem}
+    .disclaimer{font-size:.88rem;color:#69766e;background:#f0f2ed;padding:18px 20px;border-radius:14px}
+    footer{background:#1f4935;color:#eaf3ec;padding:34px 0}
+    footer .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer p{margin:5px 0;color:#c8d9cd;font-size:.9rem}
+    @media(max-width:760px){.nav{padding:14px 0;align-items:flex-start;flex-direction:column}nav{gap:12px}.hero{padding:54px 0}.hero-grid,.two{grid-template-columns:1fr}.hero-art{min-height:230px}.grid3,.steps{grid-template-columns:1fr}section{padding:54px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><span>🐾</span>반려동물 영양연구소</a>
+    <nav aria-label="주요 메뉴">
+      <a href="#about">연구소 소개</a><a href="#dogs">강아지 영양</a><a href="#cats">고양이 영양</a><a href="#safety">식품 안전</a><a href="#habits">건강 습관</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">건강한 한 끼가 만드는 행복한 일상</span>
+        <h1>우리 아이의 건강,<br><em>올바른 영양</em>에서 시작됩니다.</h1>
+        <p class="lead">강아지와 고양이의 건강한 식생활을 위해 균형 잡힌 영양, 안전한 급여, 생활 단계별 관리 정보를 쉽게 안내합니다.</p>
+        <div class="actions">
+          <a class="btn primary" href="#dogs">영양 가이드 보기</a>
+          <a class="btn secondary" href="#safety">주의 식품 확인하기</a>
+        </div>
+      </div>
+      <div class="hero-art" role="img" aria-label="강아지와 고양이를 상징하는 그림">
+        <span class="float-note note1">🥣 균형 잡힌 식사</span>
+        <div class="pet-icons">🐶 🐱</div>
+        <span class="float-note note2">🌿 건강한 식생활</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">About us</div>
+        <h2>반려동물 영양연구소</h2>
+        <p>보호자가 믿을 수 있는 기본 영양 정보를 이해하기 쉽게 전하는 교육형 정보 공간입니다.</p>
+      </div>
+      <div class="grid3">
+        <article class="card"><div class="icon">🥗</div><h3>균형 있는 영양</h3><p>반려동물의 종, 나이, 활동량과 건강 상태를 고려한 식사 관리의 중요성을 소개합니다.</p></article>
+        <article class="card"><div class="icon">🔎</div><h3>안전한 식품 선택</h3><p>급여 전 확인해야 할 식품과 주의사항을 살펴 안전한 식생활을 돕습니다.</p></article>
+        <article class="card"><div class="icon">💚</div><h3>평생 건강 습관</h3><p>적정 체중, 신선한 물, 규칙적인 급여와 정기적인 건강 확인을 안내합니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="dogs">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Dog nutrition</div><h2>🐶 강아지 영양 가이드</h2><p>강아지의 생애 단계와 개별 건강 상태에 맞는 식사 관리가 중요합니다.</p></div>
+      <div class="two">
+        <article class="guide"><h3>매일 챙길 기본 원칙</h3><ul><li>강아지용 완전균형 사료를 기본 식단으로 선택합니다.</li><li>제품 급여량 안내를 참고하되 체형과 활동량에 맞춰 조절합니다.</li><li>간식은 하루 섭취 열량의 일부로 계산합니다.</li><li>깨끗한 물을 항상 마실 수 있도록 준비합니다.</li></ul></article>
+        <article class="guide"><h3>식단을 바꿀 때</h3><ul><li>새 사료는 기존 사료와 섞어 며칠에 걸쳐 천천히 전환합니다.</li><li>식욕, 대변 상태, 피부 상태와 체중 변화를 살핍니다.</li><li>어린 강아지, 노령견, 질환이 있는 경우 수의사와 상의합니다.</li><li>갑작스러운 식욕 저하나 반복적인 구토·설사는 진료를 받습니다.</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Cat nutrition</div><h2>🐱 고양이 영양 가이드</h2><p>고양이는 필수 영양소 요구량이 특별한 육식동물입니다.</p></div>
+      <div class="two">
+        <article class="guide"><h3>고양이 식사의 핵심</h3><ul><li>고양이의 영양 요구량에 맞게 제조된 완전균형식을 선택합니다.</li><li>고양이에게 필요한 타우린 등 필수 영양소가 포함된 식품을 급여합니다.</li><li>습식 사료와 물그릇 등을 활용해 수분 섭취를 살핍니다.</li><li>간식이나 사람 음식을 주식 대신 급여하지 않습니다.</li></ul></article>
+        <article class="guide"><h3>생활 환경과 급여</h3><ul><li>조용하고 청결한 장소에 식기와 물그릇을 둡니다.</li><li>여러 마리를 키운다면 개체별 섭취량을 확인합니다.</li><li>체중과 체형을 주기적으로 관찰합니다.</li><li>배뇨량 변화나 식욕 저하가 보이면 동물병원에 문의합니다.</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="safety">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Food safety</div><h2>⚠️ 주의해야 할 식품</h2><p>아래 식품은 강아지와 고양이에게 중독이나 건강 문제를 일으킬 수 있습니다.</p></div>
+      <div class="warning">
+        <h3>급여하지 마세요</h3>
+        <div class="food-list"><span class="tag">초콜릿</span><span class="tag">포도·건포도</span><span class="tag">양파·마늘</span><span class="tag">자일리톨</span><span class="tag">알코올</span><span class="tag">카페인</span></div>
+        <p>먹었을 가능성이 있다면 양이나 증상을 임의로 판단하지 말고, 제품 포장이나 섭취량 정보를 준비해 즉시 동물병원 또는 응급 동물의료기관에 연락하세요. 임의로 구토를 유도하지 마세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="habits">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Daily care</div><h2>건강한 식생활을 위한 세 가지 습관</h2><p>작은 관찰과 꾸준한 관리가 반려동물의 건강을 지키는 데 도움이 됩니다.</p></div>
+      <div class="steps">
+        <article class="step"><h3>급여량 기록하기</h3><p>사료와 간식의 종류 및 양을 기록해 과식이나 체중 변화를 확인합니다.</p></article>
+        <article class="step"><h3>체중과 몸 상태 살피기</h3><p>정기적으로 체중과 체형, 식욕, 배변 상태를 확인합니다.</p></article>
+        <article class="step"><h3>전문가와 상담하기</h3><p>질환, 알레르기 의심, 임신·수유, 성장기와 노령기 식단은 수의사와 상의합니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="disclaimer"><strong>건강 정보 안내</strong><br>이 홈페이지는 일반적인 교육 및 정보 제공을 목적으로 하며 수의사의 진단, 치료 또는 개별 영양 처방을 대신하지 않습니다. 반려동물마다 건강 상태와 영양 요구량이 다르므로 식단 변경이나 질환 관리 전에는 수의사와 상담하세요.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong>🐾 반려동물 영양연구소</strong><p>건강한 한 끼, 행복한 평생</p></div>
+    <p>© 2026 반려동물 영양연구소. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
